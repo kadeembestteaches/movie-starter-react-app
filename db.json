@@ -1,0 +1,36 @@
+{
+   "movies": [
+      {
+         "id": 1,
+         "title": "Avengers",
+         "poster": "avengers.jpg",
+         "description": "blah blah blah",
+         "dateReleased": "June 2012",
+         "bestSeller": false
+      },
+      {
+         "id": 2,
+         "title": "Avengers : Age of Ultron",
+         "poster": "ageOfUltron.jpg",
+         "description": "blah blah blah",
+         "dateReleased": "June 2015",
+         "bestSeller": true
+      },
+      {
+         "id": 3,
+         "title": "Avengers : Infinity Wars",
+         "poster": "infinityWars.jpg",
+         "description": "blah blah blah",
+         "dateReleased": "June 2018",
+         "bestSeller": false
+      },
+      {
+         "id": 4,
+         "title": "Avengers: End Game",
+         "poster": "endGame.jpg",
+         "description": "blah blah blah",
+         "dateReleased": "June 2019",
+         "bestSeller" : true
+      }
+   ]
+}
