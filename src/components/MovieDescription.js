@@ -9,7 +9,7 @@ const MoiveDescription = ()=> {
     useEffect(()=>{
 
     console.log(id)
-     fetch("http://localhost:3001/movies/"+id)
+     fetch("http://localhost:5000/movies/"+id)
      .then(res=>res.json())
      .then((movies)=>{
        console.log(movies);

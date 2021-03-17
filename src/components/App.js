@@ -3,19 +3,17 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Home from "../pages/Home";
 import MovieContext from "../context/MovieContext";
 import MovieDecription from "../pages/MovieDescription";
-import UserReg from "../pages/Registration";
 import '../assets/css/App.css'
 import "../assets/css/utilities.css"
 
 const App = () => {
 
   const [movies, setMovies] = useState([]);
-  const [bestSellers, setBestSellers] = useState([])
 
 
   useEffect(()=>{
 
-    fetch("http://localhost:3001/movies")
+    fetch("http://localhost:5000/movies")
     .then(res=>res.json())
     .then((data)=>{
 
@@ -25,8 +23,6 @@ const App = () => {
         previousState = data;
        return previousState
       });
-
-      getBesllers(data)
       
 
     })
@@ -34,24 +30,17 @@ const App = () => {
 
   },[])
 
-  const getBesllers =(movies)=>{
-
-    console.log("Best Sellers")
-    const bestSellers = movies.filter(movie=>movie.bestSeller);
-
-    setBestSellers(bestSellers);
-  }
+ 
 
   console.log("App")
 
   return (
 
-    <MovieContext.Provider value={{movies,bestSellers}}>
+    <MovieContext.Provider value={{movies}}>
       <Router>
         <Switch>
           <Route  exact path="/"><Home/></Route>
           <Route  path="/movies/:id"><MovieDecription/></Route>
-          <Route  path="/users"><UserReg/></Route>
         </Switch>
       </Router>
     </MovieContext.Provider>
